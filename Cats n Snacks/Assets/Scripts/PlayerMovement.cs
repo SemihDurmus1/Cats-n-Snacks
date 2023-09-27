@@ -7,15 +7,19 @@ public class Hareket : MonoBehaviour
 {
     [SerializeField] float yatayHiz = 5;
     [SerializeField] float dikeyYon = 10;
+    [SerializeField] float olumDususHizi = 5;
+
     [SerializeField] LayerMask ziplamaKontrol;
+
     bool yerdeMi = true;
+    bool olduMu = false;
 
     Animator animasyonDurumu;
     SpriteRenderer hareketYonu;
     Rigidbody2D rb;
     BoxCollider2D carpma;
-    float yatayYon = 0;
 
+    float yatayYon = 0;
 
     [SerializeField] AudioClip ziplamaSesi; 
     [SerializeField] AudioClip olmeSesi;
@@ -37,17 +41,47 @@ public class Hareket : MonoBehaviour
     void Update()
     {
         yatayYon = Input.GetAxisRaw("Horizontal");
-
         rb.velocity = new Vector2(yatayYon * yatayHiz, rb.velocity.y);
 
 
-        if (Input.GetButtonDown("Jump") && yerdeMi == true)
+        if (Input.GetKey(KeyCode.Space) && rb.velocity.y < 0.1f && yerdeMi == true)
         {
             rb.velocity = new Vector2(rb.velocity.x, dikeyYon);
             sesKaynagi.PlayOneShot(ziplamaSesi);
         }
+        
+        ZeminSorgusu();
+
+        OlmusseYereDusur();
+
+        AnimasyonGuncelle();
+    }
+
+    private void OlmusseYereDusur()
+    {
+        if(olduMu == true && yerdeMi == true)
+        {
+            rb.simulated = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Tuzak")
+        {
+            animasyonDurumu.SetBool("OlduMu", true);
+
+            olduMu = true;
 
 
+
+            Invoke("Oldur", 1f);
+            sesKaynagi.PlayOneShot(olmeSesi);
+        }
+    }
+
+    private void ZeminSorgusu()
+    {
         if (Physics2D.BoxCast(carpma.bounds.center, carpma.bounds.size, 0, Vector2.down, 0.1f, ziplamaKontrol))
         {
             yerdeMi = true;
@@ -56,23 +90,7 @@ public class Hareket : MonoBehaviour
         {
             yerdeMi = false;
         }
-
-        AnimasyonGuncelle();
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Tuzak")
-        {
-            animasyonDurumu.SetBool("OlduMu", true);
-            rb.simulated = false;
-
-            Invoke("Oldur", 1f);
-            sesKaynagi.PlayOneShot(olmeSesi);
-        }
-    }
-
 
     private void Oldur()
     {
@@ -83,7 +101,7 @@ public class Hareket : MonoBehaviour
 
     void OlumScene()
     {
-        SceneManager.LoadScene("Olum");
+        SceneManager.LoadScene(0);
     }
 
 
@@ -95,6 +113,11 @@ public class Hareket : MonoBehaviour
          * 2 = zýplama
          * 3 = düþme */
 
+        if (olduMu == true)
+        {
+            animasyonDurumu.SetBool("OlduMu",true);
+            return;
+        }
 
         float dikeyHiz = rb.velocity.y;
 
@@ -113,8 +136,7 @@ public class Hareket : MonoBehaviour
             {
                 animasyonDurumu.SetInteger("durum", 2);
             }
-            else
-              if (dikeyHiz < -0.1)
+            else if (dikeyHiz < -0.1)
             {
                 animasyonDurumu.SetInteger("durum", 3);
             }
@@ -125,6 +147,9 @@ public class Hareket : MonoBehaviour
         }
         else
         {
+                animasyonDurumu.SetInteger("durum", 0);
+
+
             if (yatayYon == 0)
             {
                 animasyonDurumu.SetInteger("durum", 0);

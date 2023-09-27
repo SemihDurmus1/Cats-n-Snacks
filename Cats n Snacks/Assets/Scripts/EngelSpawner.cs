@@ -1,20 +1,24 @@
+using Platformer;
 using UnityEngine;
 
 public class EngelSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject engeller; //Buraya sonradan farklý engeller eklenecek
+    GameManager gameManager;
 
-    [SerializeField] float maxX = 4;
-    [SerializeField] float minX = 4;
+    [SerializeField] GameObject engelPrefab; //Buraya sonradan farklý engeller eklenecek
 
-    [SerializeField] float maxY = 4;
-    [SerializeField] float minY = 4;
+    [SerializeField] float maxY = 4f;
+    [SerializeField] float minY = -2.75f;
 
     [SerializeField] float timeBetweenSpawn = 1f;
     private float spawnTime;
 
-    float randomX;
     float randomY;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void Update()
     {
@@ -27,9 +31,23 @@ public class EngelSpawner : MonoBehaviour
 
     void Spawn()
     {
-        randomX = Random.Range(minX, maxX);
         randomY = Random.Range(minY, maxY);
 
-        Instantiate(engeller, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(engelPrefab, transform.position + new Vector3(transform.position.x, randomY, 0), transform.rotation);
+
+        SpawnHiziDegistir();
+    }
+
+    private void SpawnHiziDegistir()
+    {
+        //Bu methodu, engeller hýzlanýnca arada çok boþluk oluyordu, onu engellemek için yaptým
+        if (gameManager.skor > 1500)
+        {
+            timeBetweenSpawn = Random.Range(0.5f, 1.0f);
+        }
+        else
+        {
+            timeBetweenSpawn = Random.Range(0.5f, 2.0f);
+        }
     }
 }
