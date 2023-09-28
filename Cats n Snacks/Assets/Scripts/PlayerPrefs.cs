@@ -43,6 +43,7 @@ public class PlayerData : MonoBehaviour
 
     private void SetHighScore()
     {
+        //Bu kod, eðer highscore diye bir playerpref kayýtlý deðilse kaydeder, kayýtlýysa alýr
         if (!PlayerPrefs.HasKey(nameof(highScore)))
         {
             PlayerPrefs.SetFloat(nameof(highScore), highScore);
@@ -79,7 +80,7 @@ public class PlayerData : MonoBehaviour
         PlayerPrefs.SetFloat(nameof(coin), coin);
         PlayerPrefs.Save();
 
-        Debug.Log("Current Coin: " + coin);
+        Debug.Log("New coin score: " + coin);
         coinCollected = true;
 
     }
