@@ -328,15 +328,19 @@
 "Assets/2D Platformer/Scripts/EnemyAI.cs"
 "Assets/2D Platformer/Scripts/GameManager.cs"
 "Assets/2D Platformer/Scripts/PlayerController.cs"
+"Assets/Scripts/ButtonManagers/ButtonManager.cs"
+"Assets/Scripts/ButtonManagers/MainMenuButtonManager.cs"
 "Assets/Scripts/CoinScripts/CoinManager.cs"
 "Assets/Scripts/CoinScripts/CoinSpawner.cs"
-"Assets/Scripts/EngelSpawner.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/Main Menu Scripts/ShowScoreCoin.cs"
 "Assets/Scripts/ObjectDestroyer.cs"
 "Assets/Scripts/ObjectMovers/MoveToLeft.cs"
 "Assets/Scripts/ObjectMovers/SpriteMovement.cs"
 "Assets/Scripts/PlayerMovement.cs"
-"Assets/Scripts/SpriteSpawner.cs"
+"Assets/Scripts/PlayerPrefs.cs"
+"Assets/Scripts/Spawners/EngelSpawner.cs"
+"Assets/Scripts/Spawners/SpriteSpawner.cs"
 -langversion:9.0
 
 /deterministic

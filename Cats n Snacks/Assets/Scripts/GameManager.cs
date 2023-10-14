@@ -1,10 +1,15 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public Animator player;
+
+    [SerializeField] RuntimeAnimatorController orangeCatController;
+
     public float engelSpeed = 10f;
-    [SerializeField] float maxSpeed = 20f; // Belki 30 civarýna çekilebilir
+    [SerializeField] float maxSpeed = 20f;
 
     public bool isDeath = false;
 
@@ -21,8 +26,50 @@ public class GameManager : MonoBehaviour
 
     #region CoinSkor
     public TextMeshProUGUI coinSkorText;
-    public float coinSkor = 0f;
+    public int coinSkor = 0;
     #endregion
+
+    [SerializeField] Button halfJumpButton;
+    [SerializeField] Button doubleJumpButton;
+
+    private void Start()
+    {
+        if (Time.timeScale != 1) { Time.timeScale = 1; }
+
+        HalfJumpCheckActive();
+        DoubleJumpCheckActive();
+        Skin2CheckActive();
+    }
+
+    private void HalfJumpCheckActive()
+    {
+        if (PlayerPrefs.GetInt("halfJump") != 1)
+        {
+            halfJumpButton.interactable = false;
+        }
+        else if (PlayerPrefs.GetInt("halfJump") == 1)
+        {
+            halfJumpButton.interactable = true;
+        }
+    }
+    private void DoubleJumpCheckActive()
+    {
+        if (PlayerPrefs.GetInt("doubleJump") != 1)
+        {
+            doubleJumpButton.interactable = false;
+        }
+        else if (PlayerPrefs.GetInt("doubleJump") == 1)
+        {
+            doubleJumpButton.interactable = true;
+        }
+    }
+    private void Skin2CheckActive()
+    {
+        if (PlayerPrefs.GetInt("skin") == 1)
+        {
+            player.runtimeAnimatorController = orangeCatController;
+        }
+    }
 
     void Update()
     {

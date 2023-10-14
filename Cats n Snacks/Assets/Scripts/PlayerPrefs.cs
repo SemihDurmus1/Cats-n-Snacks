@@ -6,8 +6,12 @@ public class PlayerData : MonoBehaviour
 
     private float highScore = 0;
 
-    private float coin = 0;
+    private int coin = 0;
     private bool coinCollected = false;
+
+    private int halfJump;
+    private int doubleJump;
+    private int skin;
 
     private void Start()
     {
@@ -17,6 +21,10 @@ public class PlayerData : MonoBehaviour
         SetHighScore();
         SetCoin();
 
+        CheckHalfJump();
+        CheckDoubleJump();
+        CheckSkin();
+
         PlayerPrefs.Save();
     }
     private void Update()
@@ -25,44 +33,70 @@ public class PlayerData : MonoBehaviour
         SaveCoin();
     }
 
+    private void CheckSkin()
+    {
+        if (!PlayerPrefs.HasKey(nameof(skin)))
+        {
+            PlayerPrefs.SetInt(nameof(skin), 0);
+        }
+        else
+        {
+            skin = PlayerPrefs.GetInt(nameof(skin));
+        }
+    }
+    private void CheckHalfJump()
+    {
+        if (!PlayerPrefs.HasKey(nameof(halfJump)))
+        {
+            PlayerPrefs.SetInt(nameof(halfJump), 0);
+        }
+        else
+        {
+            halfJump = PlayerPrefs.GetInt(nameof(halfJump));
+        }
+    }
+    private void CheckDoubleJump()
+    {
+        if (!PlayerPrefs.HasKey(nameof(doubleJump)))
+        {
+            PlayerPrefs.SetInt(nameof(doubleJump), 0);
+        }
+        else
+        {
+            doubleJump = PlayerPrefs.GetInt(nameof(doubleJump));
+        }
+    }
+
+
     private void SetCoin()
     {
         if (!PlayerPrefs.HasKey(nameof(coin)))
         {
-            PlayerPrefs.SetFloat(nameof(coin), coin);
-
-            Debug.Log("Current Coin: " + coin);
+            PlayerPrefs.SetInt(nameof(coin), coin);
         }
         else
         {
-            coin = PlayerPrefs.GetFloat(nameof(coin));
-
-            Debug.Log("(else)Current Coin: " + coin);
+            coin = PlayerPrefs.GetInt(nameof(coin));
         }
     }
-
     private void SetHighScore()
     {
         //Bu kod, eðer highscore diye bir playerpref kayýtlý deðilse kaydeder, kayýtlýysa alýr
         if (!PlayerPrefs.HasKey(nameof(highScore)))
         {
             PlayerPrefs.SetFloat(nameof(highScore), highScore);
-
-            Debug.Log("High Score: " + highScore);
         }
         else
         {
             highScore = PlayerPrefs.GetFloat(nameof(highScore));
-
-            Debug.Log("(else)High Score: " + highScore);
         }
     }
+
 
     void SaveHighScore()
     {
         if (gameManager.skor > highScore)
         {
-            Debug.Log("High Score!!!");
             gameManager.skorText.color = Color.red;
 
             highScore = gameManager.skor;
@@ -70,19 +104,15 @@ public class PlayerData : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
-
     void SaveCoin()
     {
         if (gameManager.isDeath == false) { return; }//Oyuncu ölmediyse return et
         if (coinCollected == true) { return; }//coinler kaydedildiyse return et
 
         coin += gameManager.coinSkor;
-        PlayerPrefs.SetFloat(nameof(coin), coin);
+        PlayerPrefs.SetInt(nameof(coin), coin);
         PlayerPrefs.Save();
-
-        Debug.Log("New coin score: " + coin);
         coinCollected = true;
-
     }
 
 }

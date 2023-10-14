@@ -1,6 +1,3 @@
-using Platformer;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
@@ -16,7 +13,6 @@ public class CoinSpawner : MonoBehaviour
     private float spawnTime;
 
     float randomY;
-    int randomSpawn;
 
     void Update()
     {

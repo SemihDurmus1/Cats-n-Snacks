@@ -1,13 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ButtonManager
     - CoinManager
     - CoinSpawner
     - EngelSpawner
     - GameManager
     - Hareket
+    - MainMenuButtonManager
     - MoveToLeft
     - ObjectDestroyer
+    - PlayerData
+    - ShowScoreCoin
     - SpriteMovement
     - SpriteSpawner
     Unity.2D.Animation.Editor.dll:
@@ -119,6 +123,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -171,6 +176,33 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: UnlockHalfJump
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: UnlockSkin2
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: UnlockDoubleJump
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: ActivateSkin1
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: CloseCats
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: OpenCats
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: CloseStore
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: OpenStore
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenuButtonManager
+    methodName: StartGame
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: OnScrollbarClicked
@@ -210,8 +242,23 @@ ScriptsOnlyBuild:
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
+  - assembly: Assembly-CSharp
+    fullTypeName: Hareket
+    methodName: HalfJump
+  - assembly: Assembly-CSharp
+    fullTypeName: Hareket
+    methodName: DoubleJump
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonManager
+    methodName: BackToMainMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonManager
+    methodName: ContinueGame
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonManager
+    methodName: PauseGame
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Main.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -223,8 +270,6 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
@@ -241,6 +286,85 @@ ScriptsOnlyBuild:
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16810}
+    - Class: 114
+      Script: {instanceID: 16812}
+    - Class: 114
+      Script: {instanceID: 16850}
+    - Class: 114
+      Script: {instanceID: 19942}
+    - Class: 114
+      Script: {instanceID: 20402}
+    - Class: 114
+      Script: {instanceID: 20482}
+    - Class: 114
+      Script: {instanceID: 20538}
+    - Class: 114
+      Script: {instanceID: 21992}
+    - Class: 114
+      Script: {instanceID: 23212}
+    - Class: 114
+      Script: {instanceID: 23254}
+    - Class: 114
+      Script: {instanceID: 23276}
+    - Class: 114
+      Script: {instanceID: 23390}
+    - Class: 114
+      Script: {instanceID: 23476}
+    - Class: 114
+      Script: {instanceID: 23506}
+    - Class: 114
+      Script: {instanceID: 23732}
+    - Class: 114
+      Script: {instanceID: 24730}
+    - Class: 114
+      Script: {instanceID: 25274}
+    - Class: 114
+      Script: {instanceID: 25374}
+    - Class: 114
+      Script: {instanceID: 25476}
+    - Class: 114
+      Script: {instanceID: 26178}
+    - Class: 114
+      Script: {instanceID: 26288}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -267,113 +391,95 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17862}
     - Class: 114
-      Script: {instanceID: 18082}
+      Script: {instanceID: 18292}
     - Class: 114
-      Script: {instanceID: 18294}
+      Script: {instanceID: 18360}
     - Class: 114
-      Script: {instanceID: 18362}
+      Script: {instanceID: 18496}
     - Class: 114
-      Script: {instanceID: 18498}
+      Script: {instanceID: 19026}
     - Class: 114
-      Script: {instanceID: 19028}
+      Script: {instanceID: 19756}
     - Class: 114
-      Script: {instanceID: 19758}
+      Script: {instanceID: 19798}
     - Class: 114
-      Script: {instanceID: 19800}
+      Script: {instanceID: 19854}
     - Class: 114
-      Script: {instanceID: 19856}
-    - Class: 114
-      Script: {instanceID: 19914}
+      Script: {instanceID: 19912}
     - Class: 114
       Script: {instanceID: 20062}
     - Class: 114
       Script: {instanceID: 20078}
     - Class: 114
-      Script: {instanceID: 20402}
+      Script: {instanceID: 20532}
     - Class: 114
-      Script: {instanceID: 20530}
+      Script: {instanceID: 20538}
     - Class: 114
-      Script: {instanceID: 20536}
+      Script: {instanceID: 20602}
     - Class: 114
-      Script: {instanceID: 20600}
+      Script: {instanceID: 20694}
     - Class: 114
-      Script: {instanceID: 20692}
+      Script: {instanceID: 20772}
     - Class: 114
-      Script: {instanceID: 20770}
+      Script: {instanceID: 21120}
     - Class: 114
-      Script: {instanceID: 21118}
+      Script: {instanceID: 21180}
     - Class: 114
-      Script: {instanceID: 21178}
+      Script: {instanceID: 21976}
     - Class: 114
-      Script: {instanceID: 21974}
+      Script: {instanceID: 22338}
     - Class: 114
-      Script: {instanceID: 21990}
+      Script: {instanceID: 22850}
     - Class: 114
-      Script: {instanceID: 22846}
+      Script: {instanceID: 22914}
     - Class: 114
-      Script: {instanceID: 22910}
+      Script: {instanceID: 23044}
     - Class: 114
-      Script: {instanceID: 23040}
+      Script: {instanceID: 23212}
     - Class: 114
-      Script: {instanceID: 23208}
+      Script: {instanceID: 23390}
     - Class: 114
-      Script: {instanceID: 23250}
+      Script: {instanceID: 23732}
     - Class: 114
-      Script: {instanceID: 23272}
+      Script: {instanceID: 24024}
     - Class: 114
-      Script: {instanceID: 23386}
+      Script: {instanceID: 24090}
     - Class: 114
-      Script: {instanceID: 23500}
+      Script: {instanceID: 24322}
     - Class: 114
-      Script: {instanceID: 23726}
+      Script: {instanceID: 24352}
     - Class: 114
-      Script: {instanceID: 24018}
+      Script: {instanceID: 24412}
     - Class: 114
-      Script: {instanceID: 24084}
+      Script: {instanceID: 24654}
     - Class: 114
-      Script: {instanceID: 24316}
+      Script: {instanceID: 24726}
     - Class: 114
-      Script: {instanceID: 24404}
+      Script: {instanceID: 25328}
     - Class: 114
-      Script: {instanceID: 24646}
+      Script: {instanceID: 25374}
     - Class: 114
-      Script: {instanceID: 24718}
+      Script: {instanceID: 25556}
     - Class: 114
-      Script: {instanceID: 24722}
+      Script: {instanceID: 25804}
     - Class: 114
-      Script: {instanceID: 25266}
+      Script: {instanceID: 26094}
     - Class: 114
-      Script: {instanceID: 25320}
-    - Class: 114
-      Script: {instanceID: 25366}
-    - Class: 114
-      Script: {instanceID: 25468}
-    - Class: 114
-      Script: {instanceID: 25548}
-    - Class: 114
-      Script: {instanceID: 25796}
-    - Class: 114
-      Script: {instanceID: 26086}
-    - Class: 114
-      Script: {instanceID: 26206}
-    - Class: 114
-      Script: {instanceID: 26278}
+      Script: {instanceID: 26216}
     - Class: 114
       Script: {instanceID: 26288}
     - Class: 114
-      Script: {instanceID: 26368}
+      Script: {instanceID: 26298}
     - Class: 114
-      Script: {instanceID: 26474}
+      Script: {instanceID: 26378}
     - Class: 114
-      Script: {instanceID: 26618}
+      Script: {instanceID: 26484}
     - Class: 114
-      Script: {instanceID: 26876}
+      Script: {instanceID: 26628}
     - Class: 114
-      Script: {instanceID: 27620}
+      Script: {instanceID: 26886}
     - Class: 114
-      Script: {instanceID: 30974}
-    - Class: 114
-      Script: {instanceID: 30980}
+      Script: {instanceID: 27630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -381,8 +487,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -863,6 +967,12 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerIndirectToggle
   - hash:
       serializedVersion: 2
+      Hash: a79450440040f746ab19a917f8c42b62
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CoinSpawner
+  - hash:
+      serializedVersion: 2
       Hash: 2673f1d0e79e3676f5e46d368d79b12d
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering
@@ -933,6 +1043,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerData
   - hash:
       serializedVersion: 2
       Hash: 7a0dffef755dbed4f4799f891b173e23
@@ -1145,7 +1261,7 @@ ScriptsOnlyBuild:
     className: Variables
   - hash:
       serializedVersion: 2
-      Hash: 2760620d7c5673d3f3ec54d540e5022c
+      Hash: 5abd2a595cbd8e3de23bc3ebf7f7fb26
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Hareket
@@ -1215,6 +1331,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: cc71642dd735fd2e8de393ad7264fcc0
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ShowScoreCoin
   - hash:
       serializedVersion: 2
       Hash: a7d0addae9e8166c54c5ddbedabe8eb5
@@ -1367,7 +1489,7 @@ ScriptsOnlyBuild:
     className: SpriteMovement
   - hash:
       serializedVersion: 2
-      Hash: b87a498753a1a0da55494db39b675a38
+      Hash: f1622fb199c1087f1f9fafa4689977d6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1413,6 +1535,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 51e6333d735dead16707d5f83c0d952a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ButtonManager
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1503,6 +1631,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 4bf23ea858b8e237db34e6ba817890a7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MainMenuButtonManager
   - hash:
       serializedVersion: 2
       Hash: adfcbacf24b05b2f3b60b081fdab21dc
@@ -1752,6 +1886,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CoinManager
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
@@ -1959,19 +2099,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CoinManager
-  - hash:
-      serializedVersion: 2
-      Hash: 74672f3b7d92fd54a21af0c05e3f4b41
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CoinSpawner
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Main.unity
   playerPath: C:/Users/muham/Desktop/Cats n Snacks/Cats n Snacks.exe
