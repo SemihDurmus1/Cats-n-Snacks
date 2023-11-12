@@ -6,22 +6,28 @@ public class MainMenuButtonManager : MonoBehaviour
 {
     public GameObject panelStore;
     public GameObject catStore;
+
     public Button halfJump;
     public Button doubleJump;
     public Button orangeCat;
     public Button grayCat;
+
+    public AudioClip[] sounds;
+    private AudioSource sesKaynagi;
 
     private Image orangeActiveImage;
     private Image grayActiveImage;
 
     public Sprite collectedSprite;
 
-    private readonly int halfJumpAmount = 1000;
-    private readonly int doubleJumpAmount = 1000;
-    private readonly int skinAmount = 1000;
+    private readonly int halfJumpAmount = 100;
+    private readonly int doubleJumpAmount = 100;
+    private readonly int skinAmount = 100;
 
     private void Start()
     {
+        sesKaynagi = GetComponent<AudioSource>();
+
         HalfJumpCheckActive();
         DoubleJumpCheckActive();
         Skin2CheckActive();
@@ -76,6 +82,8 @@ public class MainMenuButtonManager : MonoBehaviour
 
     public void StartGame()
     {
+        sesKaynagi.PlayOneShot(sounds[0]);
+
         SceneManager.LoadScene("Main");
     }
 
@@ -83,18 +91,22 @@ public class MainMenuButtonManager : MonoBehaviour
     public void OpenStore()
     {
         panelStore.SetActive(true);
+        sesKaynagi.PlayOneShot(sounds[0]);
     }
     public void CloseStore()
     {
         panelStore.SetActive(false);
+        sesKaynagi.PlayOneShot(sounds[0]);
     }
     public void OpenCats()
     {
         catStore.SetActive(true);
+        sesKaynagi.PlayOneShot(sounds[0]);
     }
     public void CloseCats() 
     {
         catStore.SetActive(false);
+        sesKaynagi.PlayOneShot(sounds[0]);
     }
 
 
@@ -102,6 +114,7 @@ public class MainMenuButtonManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("coin") >= halfJumpAmount)
         {
+            sesKaynagi.PlayOneShot(sounds[2]);
             int currentCoinSkor = PlayerPrefs.GetInt("coin");
             Debug.Log("Old coin: " + currentCoinSkor);
 
@@ -113,6 +126,7 @@ public class MainMenuButtonManager : MonoBehaviour
         }
         else
         {
+            sesKaynagi.PlayOneShot(sounds[1]);
             Debug.Log("Yetersiz Para");
         }
         HalfJumpCheckActive();
@@ -121,6 +135,8 @@ public class MainMenuButtonManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("coin") >= doubleJumpAmount)
         {
+            sesKaynagi.PlayOneShot(sounds[2]);
+
             int currentCoinSkor = PlayerPrefs.GetInt("coin");
             Debug.Log("Old coin: " + currentCoinSkor);
 
@@ -132,6 +148,7 @@ public class MainMenuButtonManager : MonoBehaviour
         }
         else
         {
+            sesKaynagi.PlayOneShot(sounds[1]);
             Debug.Log("Yetersiz Para");
         }
         DoubleJumpCheckActive();
@@ -140,10 +157,14 @@ public class MainMenuButtonManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("unlockSkin") == 1)
         {
+            sesKaynagi.PlayOneShot(sounds[2]);
+
             PlayerPrefs.SetInt("skin", 1);
         }
         else if (PlayerPrefs.GetInt("coin") >= skinAmount)
         {
+            sesKaynagi.PlayOneShot(sounds[2]);
+
             int currentCoinSkor = PlayerPrefs.GetInt("coin");
             Debug.Log("Old coin: " + currentCoinSkor);
 
@@ -157,6 +178,7 @@ public class MainMenuButtonManager : MonoBehaviour
         }
         else
         {
+            sesKaynagi.PlayOneShot(sounds[1]);
             Debug.Log("Yetersiz Para");
         }
         Skin2CheckActive();
@@ -164,6 +186,8 @@ public class MainMenuButtonManager : MonoBehaviour
 
     public void ActivateSkin1()
     {
+        sesKaynagi.PlayOneShot(sounds[2]);
+
         grayActiveImage = grayCat.transform.Find("aktif").GetComponent<Image>();
         grayActiveImage.gameObject.SetActive(true);
 

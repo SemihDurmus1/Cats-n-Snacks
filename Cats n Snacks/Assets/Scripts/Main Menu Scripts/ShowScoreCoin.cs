@@ -22,4 +22,14 @@ public class ShowScoreCoin : MonoBehaviour
         coinText.text = "Coins: " + currentCoin.ToString();
         scoreText.text = "High Score: " + currentScore.ToString();
     }
+
+    private void Update()
+    {
+        currentCoin = PlayerPrefs.GetInt("coin");
+        currentScore = (int)PlayerPrefs.GetFloat("highScore");
+
+
+        coinText.text = "Coins: " + currentCoin.ToString();
+        scoreText.text = "High Score: " + currentScore.ToString();
+    }
 }

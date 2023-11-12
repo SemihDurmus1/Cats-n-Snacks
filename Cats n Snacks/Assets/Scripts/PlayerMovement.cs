@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,9 +17,15 @@ public class Hareket : MonoBehaviour
     Rigidbody2D rb;
     BoxCollider2D carpma;
 
-
-    [SerializeField] AudioClip ziplamaSesi; 
+    
+    [SerializeField] AudioClip normalJump;
+    [SerializeField] AudioClip halfJump;
+    [SerializeField] AudioClip doubleJump;
     [SerializeField] AudioClip olmeSesi;
+
+    [SerializeField] AudioClip yesilMama;
+    [SerializeField] AudioClip maviMama;
+    [SerializeField] AudioClip kirmiziMama;
 
     private AudioSource sesKaynagi;
 
@@ -49,12 +56,25 @@ public class Hareket : MonoBehaviour
     {
         if (collision.CompareTag("Tuzak"))
         {
+            sesKaynagi.PlayOneShot(olmeSesi);
+
             animasyonDurumu.SetBool("OlduMu", true);
 
             olduMu = true;
 
             Invoke(nameof(Oldur), 1f);
-            sesKaynagi.PlayOneShot(olmeSesi);
+        }
+        else if (collision.CompareTag("YesilMama"))
+        {
+            sesKaynagi.PlayOneShot(yesilMama);
+        }
+        else if (collision.CompareTag("MaviMama"))
+        {
+            sesKaynagi.PlayOneShot(maviMama);
+        }
+        else if (collision.CompareTag("KirmiziMama"))
+        {
+            sesKaynagi.PlayOneShot(kirmiziMama);
         }
     }
 
@@ -126,27 +146,27 @@ public class Hareket : MonoBehaviour
 
     public void HalfJump()
     {
-        if (rb.velocity.y < 0.1f && yerdeMi == true)
+        if (rb.velocity.y < 0.1f && yerdeMi == true && olduMu == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, halfJumpAmount);
-            sesKaynagi.PlayOneShot(ziplamaSesi);
+            sesKaynagi.PlayOneShot(halfJump);
         }
     }
     public void NormalJump()
     {
-        if (yerdeMi)
+        if (yerdeMi && olduMu == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, dikeyYon);
-            sesKaynagi.PlayOneShot(ziplamaSesi);
+            sesKaynagi.PlayOneShot(normalJump);
         }
     }
     public void DoubleJump()
     {
-        if (doubleJumped == false && yerdeMi == false)
+        if (doubleJumped == false && yerdeMi == false && olduMu == false)
         {
             doubleJumped = true;
             rb.velocity = new Vector2(rb.velocity.x, halfJumpAmount);
-            sesKaynagi.PlayOneShot(ziplamaSesi);
+            sesKaynagi.PlayOneShot(doubleJump);
         }
     }
 }

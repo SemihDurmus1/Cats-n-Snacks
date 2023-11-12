@@ -82,17 +82,17 @@
 45            android:name="com.unity3d.player.UnityPlayerActivity"
 45-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:15-68
 46            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
-46-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:188-369
+46-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:185-366
 47            android:exported="true"
-47-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:441-464
+47-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:438-461
 48            android:hardwareAccelerated="false"
-48-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:405-440
+48-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:402-437
 49            android:launchMode="singleTask"
-49-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:156-187
+49-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:153-184
 50            android:resizeableActivity="false"
-50-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:370-404
-51            android:screenOrientation="reverseLandscape"
-51-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:111-155
+50-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:367-401
+51            android:screenOrientation="userLandscape"
+51-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:111-152
 52            android:theme="@style/UnityThemeSelector" >
 52-->C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:69-110
 53            <intent-filter>

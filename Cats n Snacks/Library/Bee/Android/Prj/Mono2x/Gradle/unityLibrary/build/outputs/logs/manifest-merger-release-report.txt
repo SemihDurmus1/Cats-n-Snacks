@@ -82,17 +82,17 @@ ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\And
 activity#com.unity3d.player.UnityPlayerActivity
 ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-22:16
 	android:screenOrientation
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:111-155
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:111-152
 	android:launchMode
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:156-187
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:153-184
 	android:hardwareAccelerated
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:405-440
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:402-437
 	android:exported
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:441-464
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:438-461
 	android:resizeableActivity
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:370-404
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:367-401
 	android:configChanges
-		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:188-369
+		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:185-366
 	android:theme
 		ADDED from C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:69-110
 	android:name

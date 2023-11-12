@@ -111,8 +111,8 @@
 61-->[:unityLibrary] C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:49:13-44
 62            android:resizeableActivity="false"
 62-->[:unityLibrary] C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:50:13-47
-63            android:screenOrientation="reverseLandscape"
-63-->[:unityLibrary] C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:51:13-57
+63            android:screenOrientation="userLandscape"
+63-->[:unityLibrary] C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:51:13-54
 64            android:theme="@style/UnityThemeSelector" >
 64-->[:unityLibrary] C:\UnityGames\UnityGitHub\Cats-n-Snacks\Cats n Snacks\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:52:13-54
 65            <intent-filter>
